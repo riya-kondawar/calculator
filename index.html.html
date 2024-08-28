@@ -1,0 +1,123 @@
+<!--  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section {
+            text-align: center;
+
+            /* font-size: larger;
+        height: 70vh;
+        width: 100vw;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; */
+        }
+
+        form{
+            text-align: center;
+        }
+
+        section h2{
+            text-transform: uppercase;
+        }
+        section hr{
+            margin: 14px 0;
+        }
+        section input[type = number]{
+
+        }
+
+
+
+
+
+
+    </style>
+
+    <script>
+
+        document.getElementById("add").onclick = function () { calculate('add'); };
+        document.getElementById("sub").onclick = function () { calculate('sub'); };
+        document.getElementById("mul").onclick = function () { calculate('mul'); };
+
+        function calculate(operation) {
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            var result = 0;
+
+            switch (operation) {
+                case 'add':
+                    result = Number(num1) + Number(num2);
+                    break;
+                case 'sub':
+                    result = Number(num1) - Number(num2);
+                    break;
+                case 'mul':
+                    result = Number(num1) * Number(num2);
+                    break;
+            }
+
+            document.getElementById("result").value = result;
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <section id="calculator">
+        <h2>Calculator</h2>
+        <hr>
+        <div>
+            <form action="#">
+                <label for="num1">First number: </label>
+                <input type="text" name="" id="num1"><br>
+                <label for="num2">Second Number:</label>
+                <input type="text" name="" id="num2"><br>
+
+                <button id="add">Addition</button>
+                <button id="add">Subtraction</button>
+                <button id="add">Multiplication</button>
+                <button id="add">Division</button><br>
+
+                <!--  
+            <input type="button" name="sub" id="sub" value="Subtraction">
+            <input type="button" name="mul" id="mul" value="Multiplication"><br><br> 
+             -->
+
+                <label for="result">Your Result: </label>
+                <input type="text" name="result" id="result" readonly><br>
+
+                <input type="reset" name="reset" id="reset" value="reset">
+
+            </form>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
